@@ -12,7 +12,7 @@ it extracts the books from that category including additional pages then it writ
 The last file is Main.py its extracts informations of each book by category each then it writes a CSV file for each category books
 it also download the cover from each book and put them into a folder called "images" 
 
-#Installation 
+# Installation 
 
 First make sure you have Python installed into your system 
 ``` Download python here : https://www.python.org/downloads/ ```
