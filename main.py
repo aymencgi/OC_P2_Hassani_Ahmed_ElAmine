@@ -3,9 +3,6 @@ import csv
 from bs4 import BeautifulSoup
 import os
 
-# creer le readme et push le projet sur github
-# fonction qui request l'URL de base
-
 def request_parser(url):
     # url = "https://books.toscrape.com/index.html"
     request = requests.get(url)
@@ -46,10 +43,6 @@ def category():
 
 all_link_short_categories, all_link_categories = category()
 
-
-# print(all_link_categories)
-
-
 # fonction qui scan les liens des catégories, fait la pagination et retour tout les liens des livres
 
 
@@ -57,24 +50,23 @@ def onecategorybooks(categoryUrl):
     books_of_category = []
     url = categoryUrl
     links = []
-    r = requests.get(url)
-    r_url = BeautifulSoup(r.content, 'html.parser')
-    for w in r_url.select('h3 > a'):
-        x = w['href']
-        c = "https://books.toscrape.com/catalogue/" + x.replace('../', '')
-        links.append(c)
+    request = request_parser(url)
+    for book in request.select('h3 > a'):
+        end_link = book['href']
+        full_link = "https://books.toscrape.com/catalogue/" + end_link.replace('../', '')
+        links.append(full_link)
     for numb in range(2, 10):
         all_pages = url.replace("index.html", f'page-{numb}.html')
-        request = requests.get(all_pages)
-        if not request.ok:
+        request2 = requests.get(all_pages)
+        if not request2.ok:
             break
         books_of_category.append(url)
         books_of_category.append(all_pages)
-        soup = BeautifulSoup(request.content, 'html.parser')
-        for w in soup.select('h3 > a'):
-            x = w['href']
-            u = "https://books.toscrape.com/catalogue/" + x.replace('../', '')
-            links.append(u)
+        soup = BeautifulSoup(request2.content, 'html.parser')
+        for additional_book in soup.select('h3 > a'):
+            end_link_add = additional_book['href']
+            full_add_link = "https://books.toscrape.com/catalogue/" + end_link_add.replace('../', '')
+            links.append(full_add_link)
     return links
 
 
@@ -136,16 +128,4 @@ def get_images():
 
 get_images()
 
-"""
-for category in categories_name:
-    path = os.getcwd()
-    if not os.path.exists('categories'):
-        os.makedirs(category)
 
-    un_code = [2, 3, 4]
-try:
-  un_code.pop(10)
-except Exception as error:
-  print(error)
-
-"""
