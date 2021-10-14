@@ -11,3 +11,19 @@ it extracts the books from that category including additional pages then it writ
 
 The last file is Main.py its extracts informations of each book by category each then it writes a CSV file for each category books
 it also download the cover from each book and put them into a folder called "images" 
+
+#Installation 
+
+First make sure you have Python installed into your system 
+``` Download python here : https://www.python.org/downloads/ ```
+
+Then you need to set up your virtual environment : 
+```python3 -m venv env```
+
+After that you need to download the requirements
+```pip install -r requirements.txt```
+
+You are now ready to use the scripts choose the appropreciate script based on what you need to execute it write this 
+```python3 "name of the file".py```
+
+
