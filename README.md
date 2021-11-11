@@ -1,29 +1,40 @@
 # OC Projet 2 : Utilisez les bases de Python pour l'analyse de marché
 
 # Introduction 
-Created multiple scripts in python to extract information from a bookstore website https://books.toscrape.com/ I created 3 files which i will explain in the following : 
+Pour ce projet j'ai créer des scripts python capable d'extraire des information du site de vente de livre https://books.toscrape.com/ 
+J'ai créer 3 script qui sont les suivants : 
 
-The first file is one_book.py it's extract information for a book i chose (you can change the book by modifing the url)
-then it writes the information into a CSV file with the title of the book as its file name
+Le premiéer fichier one_book.py extrait les information d'un seul livre que j'ai aléatoirement choisi (vous pouvais par la suite changer le livre en modifiant le lien)
+ensuite ces informations sont stocké dans un fichier CSV
 
-The second file is one_category.py it's extract information for a category i chose (you can change the category by modifing the url)
-it extracts the books from that category including additional pages then it writes it into a CSV file
+Le second fichier one_category.py extrait les information de toutes les livres d'une seule catégorie que j'ai aléatoirement choisi en prenant en compte le faite qu'il y'est ou non des pages additionels (vous pouvais par la suite changer la catégorie en modifiant le lien)
+ensuite ces informations sont stocké dans un fichier CSV
 
-The last file is Main.py its extracts informations of each book by category each then it writes a CSV file for each category books
-it also download the cover from each book and put them into a folder called "images" 
+Le dernier fichier Allbooks.py extrait les information de toutes les livres par catégorie,télécharge l'image de chaque page produit et enregistre ces information dans des fichiers CSV (Le nom de chaque fichier CSV corresponds a celui de la catégorie)  
+
 
 # Installation 
 
-First make sure you have Python installed into your system 
-``` Download python here : https://www.python.org/downloads/ ```
+Installer Python sur votre systéme
 
-Then you need to set up your virtual environment : 
-```python3 -m venv env```
+``` Télécharger python pour Windows : https://www.python.org/downloads/```
+```Télécharger python pour Mac : https://www.python.org/downloads/macos/```
+```Télécharger python pour Linux : https://docs.python.org/3/using/unix.html```
 
-After that you need to download the requirements
+
+Ensuite vous devez créer votre environment virtuel j'utilise Pycharm comme IDE : 
+```https://www.jetbrains.com/pycharm/```
+
+Pour créer un environment virtuel il faut suivre les étapes suivantes : 
+1- Ovrir Pycharm 
+2 - Cliquer sur fichier, Nouveau Projet 
+3 - Séléctionner Nouvelle environment en utilisant "Virtualenv"
+4 - Cliquer sur créer 
+
+Vous devez maintenant installer les packages nécessaire exécuter cette commande dans le terminal pycharm   
 ```pip install -r requirements.txt```
 
-You are now ready to use the scripts choose the appropreciate script based on what you need to execute it write this 
+Vous étes maintenant prés a utiliser les scripts avec cette commande : 
 ```python3 "name of the file".py```
 
 
