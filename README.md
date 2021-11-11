@@ -35,6 +35,6 @@ Vous devez maintenant installer les packages nécessaire exécuter cette command
 ```pip install -r requirements.txt```
 
 Vous étes maintenant prés a utiliser les scripts avec cette commande : 
-```python3 "name of the file".py```
+```python3 "Nom du script".py```
 
 
